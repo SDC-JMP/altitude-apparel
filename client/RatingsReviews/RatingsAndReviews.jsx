@@ -17,7 +17,11 @@ function RatingsAndReviews() {
 
   const fetchAllReviews = () => {
     if (!sortingByStars) {
-      axios.get(`/reviews/${currentId}&count=${count}`)
+      axios.get(`/reviews/${currentId}`, {
+        params: {
+          count,
+        },
+      })
           .then((response) => {
             updateReview(response.data.results);
             updateReviewsCuedToDisplay(response.data.results.length);

@@ -55,7 +55,7 @@ function ReviewTiles({review}) {
                 {review.body}
               </Card.Text>
               {review.photos.map((photo) =>
-                <Image key={photo['id']} src={photo['url']} thumbnail />)}
+                <Image key={photo} src={photo} thumbnail />)}
             </Card.Body>
           </Card>
         </Col>
